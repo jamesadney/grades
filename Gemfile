@@ -48,5 +48,6 @@ group :test do
 	gem 'capybara'
 	gem 'launchy'
 	gem 'simplecov', :require => false
+	gem 'factory_girl_rails', "~> 4.0"
 end
 
