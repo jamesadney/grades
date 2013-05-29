@@ -15,6 +15,13 @@
   <%= @assignment.points %>
 </p>
 
+<%= form_for [@assignment, @grade] do |f| %>
+	<%= f.label :student %>
+	<%= f.collection_select :student_id, Student.all, :id, :name %>
+	<%= f.label :score %>
+	<%= f.text_field :score %>
+	<%= f.submit "Save Grade" %>
+<% end %>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>

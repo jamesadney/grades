@@ -1,7 +1,10 @@
 Grades::Application.routes.draw do
   root to: redirect("/assignments")
 
-  resources :assignments
+  resources :assignments do
+    resources :grades
+  end
+
   resources :students
 
   # The priority is based upon order of creation:

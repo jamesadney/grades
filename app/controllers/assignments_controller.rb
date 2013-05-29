@@ -14,6 +14,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1.json
   def show
     @assignment = Assignment.find(params[:id])
+    @grade = Grade.new(assignment_id: @assignment.id)
 
     respond_to do |format|
       format.html # show.html.erb

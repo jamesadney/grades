@@ -7,8 +7,7 @@ feature "Creating Grades" do
   scenario "creating a new grade" do
     visit "/"
     click_link "Show"
-    save_and_open_page
-    click_link student.name
+    select student.name
     fill_in "Score", with: assignment.points
     click_button "Save Grade"
 
