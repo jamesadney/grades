@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @assignment.title %>
-</p>
+<h2><%= @assignment.title %></h2>
 
 <p>
   <b>Description:</b>
@@ -14,6 +11,14 @@
   <b>Points:</b>
   <%= @assignment.points %>
 </p>
+
+<h3>Already Scored</h3>
+
+<ul id="scores">
+  <% Student.has_score_for(@assignment).each do |student| %>
+  <li><%= student.name %> | <%= student.grade_for(@assignment).score %></li>
+  <% end %>
+</ul>
 
 <%= form_for [@assignment, @grade] do |f| %>
 	<%= f.label :student %>
